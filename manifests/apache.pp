@@ -4,7 +4,7 @@
 	class apache(
 		$apache = 'puppet module install puppetlabs-apache',		
 		$path 	= '/usr/bin:/usr/sbin:/bin'
-		#$path 	= '/bin:/usr/bin'
+		#Vagrant users $path 	= '/bin:/usr/bin'
 	){
 		exec { 'puppetlabs-apache':
 			command 	=> $apache,

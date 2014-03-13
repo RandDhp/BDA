@@ -7,6 +7,22 @@
 		$perl 		= 'perl',
 		$pmtools 	= 'pmtools',
 		$cpanminus 	= 'cpanminus'
+		$module		= ['CGI', 
+						'Date::Format',
+						'DateTime',
+						'DAteTime::TimeZone',
+						'DBI',
+						'DBD::mysql',
+						'Digest::SHA',
+						'Email::Send',
+						'Email::MIME',
+						'Template',
+						'URI',
+						'List::MoreUtils',
+						'Math::Random::ISAAC'
+						],		
+		$path 		= '/usr/bin:/usr/sbin:/bin'
+		#Vagrant users $path 	= '/bin:/usr/bin'
 	){
 		package { $perl:
 			ensure 	=> $ensure,
@@ -17,10 +33,12 @@
 		package { $cpanminus:
 			ensure 	=> $ensure,
 		}
-		#exec {"cpanm App::cpanoutdated":}
-		#package { 'cpanoutdated':
-		#	ensure 	=> installed,	
-		#}
+		exec { 'perl-modules':
+			command 	=> "cpanm {$module[0]}",
+  			path 		=> $path,
+  			user 		=> root,
+ 			#onlyif  	=> "test `puppet module list | grep puppetlabs-mysql | wc -l` -eq 0"
+		}		
 	}
 	
 	#Declaration of the class

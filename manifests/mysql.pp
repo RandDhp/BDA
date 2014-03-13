@@ -4,7 +4,7 @@
 	class mysql(
 		$mysql 	= 'puppet module install puppetlabs-mysql',		
 		$path 	= '/usr/bin:/usr/sbin:/bin'
-		#$path 	= '/bin:/usr/bin'
+		#Vagrant users $path 	= '/bin:/usr/bin'
 	){
 		exec { 'puppetlabs-mysql':
 			command 	=> $mysql,
