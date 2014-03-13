@@ -6,21 +6,19 @@
 		$ensure 	= installed,
 		$perl 		= 'perl',
 		$pmtools 	= 'pmtools',
-		$cpanminus 	= 'cpanminus'
-		$module		= ['CGI', 
-						'Date::Format',
-						'DateTime',
-						'DAteTime::TimeZone',
-						'DBI',
-						'DBD::mysql',
-						'Digest::SHA',
-						'Email::Send',
-						'Email::MIME',
-						'Template',
-						'URI',
-						'List::MoreUtils',
-						'Math::Random::ISAAC'
-						],		
+		$cpanminus 	= 'cpanminus',
+		$module		= ['CGI', 'Date::Format', 'DateTime'],
+						#'DAteTime::TimeZone',
+						#'DBI',
+						#'DBD::mysql',
+						#'Digest::SHA',
+						#'Email::Send',
+						#'Email::MIME',
+						#'Template',
+						#'URI',
+						#'List::MoreUtils',
+						#'Math::Random::ISAAC'
+						#],		
 		$path 		= '/usr/bin:/usr/sbin:/bin'
 		#Vagrant users $path 	= '/bin:/usr/bin'
 	){
